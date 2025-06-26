@@ -40,7 +40,7 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s ease;
-      width: 48%;
+      width: 48%; /* Make buttons take up half of the row */
     }
 
     .nav-button:hover {
@@ -61,7 +61,9 @@
 </head>
 <body>
   <div id="buttons">
+    <!-- Przyciski w dwóch rzędach -->
     <div class="button-row">
+      <button class="nav-button" onclick="viewer.setPanorama(pano)">Panorama</button>
       <button class="nav-button" onclick="window.open('11211_MP_2024_A4V2.pdf')">Floor Plan (PDF)</button>
       <button class="nav-button" onclick="window.open('floorplan2.png')">Floor Plan 2</button>
       <button class="nav-button" onclick="window.open('floorplan3.png')">Floor Plan 3</button>
@@ -76,8 +78,9 @@
   <script src="https://cdn.jsdelivr.net/gh/pchen66/panolens.js@0.10.2/build/panolens.min.js"></script>
 
   <script>
-    const pano = new PANOLENS.ImagePanorama('wrk.png');
-    const pano26 = new PANOLENS.ImagePanorama('newpano2606.png'); // Nowa panorama 26.06 z inną nazwą
+    // Standardowa panorama
+    const pano = new PANOLENS.ImagePanorama('panorama.png');
+    const pano26 = new PANOLENS.ImagePanorama('newpano2606.png'); // Nowa panorama 26.06
 
     const viewer = new PANOLENS.Viewer({
       container: document.querySelector('#panorama'),
