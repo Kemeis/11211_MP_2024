@@ -40,7 +40,7 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.2s ease;
-      width: 48%; /* Make buttons take up half of the row */
+      width: 48%;
     }
 
     .nav-button:hover {
@@ -64,10 +64,11 @@
     <!-- Przyciski w dwóch rzędach -->
     <div class="button-row">
       <button class="nav-button" onclick="viewer.setPanorama(pano)">Panorama</button>
-
       <button class="nav-button" onclick="window.open('11211_MP_2024_A4V2.pdf')">Floor Plan (PDF)</button>
       <button class="nav-button" onclick="window.open('floorplan2.png')">Floor Plan 2</button>
       <button class="nav-button" onclick="window.open('floorplan3.png')">Floor Plan 3</button>
+      <!-- Nowy przycisk Panorama 26.06 -->
+      <button class="nav-button" onclick="viewer.setPanorama(pano26)">Panorama 26.06</button>
     </div>
   </div>
 
@@ -77,8 +78,9 @@
   <script src="https://cdn.jsdelivr.net/gh/pchen66/panolens.js@0.10.2/build/panolens.min.js"></script>
 
   <script>
-    // Panoramy
+    // Standardowa panorama
     const pano = new PANOLENS.ImagePanorama('panorama.png');
+    const pano26 = new PANOLENS.ImagePanorama('newpano.png'); // Nowa panorama 26.06
 
     const viewer = new PANOLENS.Viewer({
       container: document.querySelector('#panorama'),
@@ -87,7 +89,12 @@
     });
 
     viewer.add(pano);
-    viewer.setPanorama(pano); // Start with panorama
+    viewer.setPanorama(pano); // Start with standard panorama
+
+    // Funkcja do zmiany panoramy na Panorama 26.06
+    function setPanorama26() {
+      viewer.setPanorama(pano26);
+    }
   </script>
 </body>
 </html>
