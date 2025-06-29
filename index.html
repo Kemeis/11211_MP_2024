@@ -64,6 +64,7 @@
     <div class="button-row">
       <button class="nav-button" onclick="viewer.setPanorama(pano)">Panorama</button>
       <button class="nav-button" onclick="viewer.setPanorama(pano2606)">Panorama 26.06</button>
+      <button class="nav-button" onclick="viewer.setPanorama(pano2906)">Panorama 29.06</button>
       <button class="nav-button" onclick="window.open('11211_MP_2024_A4V2.pdf')">Floor Plan (PDF)</button>
       <button class="nav-button" onclick="window.open('floorplan2.png')">Floor Plan 2</button>
       <button class="nav-button" onclick="window.open('floorplan3.png')">Floor Plan 3</button>
@@ -78,6 +79,7 @@
   <script>
     const pano = new PANOLENS.ImagePanorama('panorama.png');
     const pano2606 = new PANOLENS.ImagePanorama('newpano2606.png');
+    const pano2906 = new PANOLENS.ImagePanorama('neino.png');
 
     const viewer = new PANOLENS.Viewer({
       container: document.querySelector('#panorama'),
@@ -87,6 +89,7 @@
 
     viewer.add(pano);
     viewer.add(pano2606);
+    viewer.add(pano2906);
     viewer.setPanorama(pano);
   </script>
 </body>
